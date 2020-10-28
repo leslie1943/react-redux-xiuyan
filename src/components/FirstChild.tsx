@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 interface FirstChildProps {
   title: string
   emitChangeTitle: Function

@@ -3,34 +3,14 @@ import React, { Component } from 'react'
 import './App.css'
 import FirstChild from './components/FirstChild'
 import SecondChild from './components/SecondChild'
+import './demo/declare-demo'
+import './demo/export-demo'
 
-// ############ declare module ############
-type BiddingType = typeof Bidding
-
-const biddingItem: BiddingType = {
-  name: 'leslie',
-  price: 100,
-  initBidding(msg) {
-    console.info('msg', msg)
-    return msg
-  },
-}
-biddingItem.initBidding('start bidding')
-// ############ declare module ############
-
-// interface ConfigState {
-//   obj: SystemConfig
-// }
-// type ModuleA = typeof SystemConfig
-
-// interface AppProps {
-//   name: string
-// }
 interface AppState {
   readonly title: string
   readonly name: string
 }
-//
+
 class App extends Component<AppState> {
   // constructor(props: null) {
   //   super(props)

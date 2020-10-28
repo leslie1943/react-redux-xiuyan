@@ -20,10 +20,13 @@
     "jsx": "react",
     "baseUrl": ".",
     "typeRoots": [
-      "src/types/*",
-    ]
+      "./src/types/*"
+    ],
+    "paths": {
+      "*":["./src/types/*"]
+    }
   },
   "include": [
-   "src",
+    "src"
   ]
 }
