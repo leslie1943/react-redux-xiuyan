@@ -3,15 +3,18 @@ import React, { Component } from 'react'
 import './App.css'
 import FirstChild from './components/FirstChild'
 import SecondChild from './components/SecondChild'
+import CounterRedux from './components/CounterRedux'
+import CounterState from './components/CounterState'
+import ProfilePage from './components/ProfilePage'
 import './demo/declare-demo'
-import './demo/export-demo'
 
 interface AppState {
   readonly title: string
   readonly name: string
+  readonly profile: string
 }
 
-class App extends Component<AppState> {
+class App extends Component<null, AppState> {
   // constructor(props: null) {
   //   super(props)
   //   this.state = { title: 'parent title', name: 'leslie' }
@@ -19,11 +22,17 @@ class App extends Component<AppState> {
   readonly state = {
     title: 'parent title',
     name: 'leslie',
+    profile: 'Dan',
   }
 
   handleChangeTitle = (newTitle: string = 'parent title'): void => {
     this.setState({
       title: newTitle,
+    })
+  }
+  handleChangeProfile = () => {
+    this.setState({
+      profile: 'leslie',
     })
   }
 
@@ -53,6 +62,23 @@ class App extends Component<AppState> {
               emitChangeTitle={this.handleChangeTitle}
               title={this.state.title}
             />
+          </div>
+          <hr />
+          <div className="child-container">
+            <CounterRedux initialCount={100} />
+          </div>
+          <hr />
+          <div className="child-container">
+            <CounterState initialCount={100} />
+          </div>
+          <hr />
+          <div
+            className="child-container"
+            style={{ border: '1px solid #409FEE', padding: 10 }}
+          >
+            <p>Welcome to {this.state.profile}'s Profile</p>
+            <ProfilePage user={this.state.profile} />
+            <button onClick={this.handleChangeProfile}>Change profile</button>
           </div>
           <a
             className="App-link"
