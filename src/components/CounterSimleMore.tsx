@@ -1,8 +1,7 @@
 import React from 'react'
 import { incrementAction, reduceAction } from '../reducers/calculate'
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
-import { RootState } from '../reducers/index'
+import { RootState, ReduxDispatch } from '../reducers/index'
 
 interface Props {
   num: number
@@ -11,7 +10,7 @@ interface Props {
   decrement: () => any
 }
 
-class CounterSimple extends React.Component<Props, any> {
+class CounterSimpleMore extends React.Component<Props, any> {
   render() {
     const btnStyle = {
       marginRight: 10,
@@ -42,12 +41,16 @@ const mapStateToProps = (state: RootState) => {
   }
 }
 
-// 将 action 映射到 组件的 props
-// 使用 dispatch来触发 action 可以影响到 reducer 模块下对应的函数,进而更新 模块下的 state
-const mapDispatchToProps = (dispath: Dispatch) => ({
+/**
+ * 函数用途: 将 action 映射到 组件的 props
+ * 解释: 使用 dispatch来触发 action 可以影响到 reducer 模块下对应的函数,进而更新 模块下的 state
+ * ReduxDispatch 只是 Dispatch 的类型别名, reducers入口文件统一统一
+ *
+ */
+const mapDispatchToProps = (dispath: ReduxDispatch) => ({
   increment: () => dispath(incrementAction),
   decrement: () => dispath(reduceAction),
 })
 
 // 注入到组件的props
-export default connect(mapStateToProps, mapDispatchToProps)(CounterSimple)
+export default connect(mapStateToProps, mapDispatchToProps)(CounterSimpleMore)

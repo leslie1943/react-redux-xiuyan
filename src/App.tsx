@@ -7,6 +7,8 @@ import CounterRedux from './components/CounterRedux'
 import CounterState from './components/CounterState'
 import ProfilePage from './components/ProfilePage'
 import CounterSimple from './components/CounterSimple'
+import CounterSimleMore from './components/CounterSimleMore'
+import ConfigSetting from './components/ConfigSetting'
 import './demo/declare-demo'
 
 interface AppState {
@@ -83,10 +85,21 @@ class App extends Component<null, AppState> {
           </div>
           <hr />
           <div
-            style={{ border: '1px solid yellow', padding: 80 }}
+            style={{ border: '1px solid #f56c6c', padding: 120 }}
             className="child-container"
           >
+            <p>Counter Component 1</p>
             <CounterSimple />
+            <hr />
+            <p>Counter Component 2</p>
+            <CounterSimleMore />
+          </div>
+          <hr />
+          <div
+            style={{ border: '1px solid #f56c6c', padding: 120 }}
+            className="child-container"
+          >
+            <ConfigSetting />
           </div>
           <p></p>
         </header>

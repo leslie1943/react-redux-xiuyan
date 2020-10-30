@@ -4,12 +4,9 @@ import './index.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-// below 3 import sentences for Redux
+// below 2 import sentences for Redux
 import { Provider } from 'react-redux'
-
-import { store } from './reducers'
-
-// 创建 Store
+import { store } from './reducers' // 引入全局的reducers(store: 单一数据源)
 
 ReactDOM.render(
   <Provider store={store}>
