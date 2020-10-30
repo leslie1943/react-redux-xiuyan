@@ -6,6 +6,7 @@ import SecondChild from './components/SecondChild'
 import CounterRedux from './components/CounterRedux'
 import CounterState from './components/CounterState'
 import ProfilePage from './components/ProfilePage'
+import Counter from './components/Counter'
 import './demo/declare-demo'
 
 interface AppState {
@@ -79,6 +80,13 @@ class App extends Component<null, AppState> {
             <p>Welcome to {this.state.profile}'s Profile</p>
             <ProfilePage user={this.state.profile} />
             <button onClick={this.handleChangeProfile}>Change profile</button>
+          </div>
+          <hr />
+          <div
+            style={{ border: '1px solid yellow', padding: 80 }}
+            className="child-container"
+          >
+            <Counter />
           </div>
           <a
             className="App-link"
