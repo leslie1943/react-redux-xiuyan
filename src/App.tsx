@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import './App.css'
 import FirstChild from './components/FirstChild'
 import SecondChild from './components/SecondChild'
-import CounterRedux from './components/CounterRedux'
-import CounterState from './components/CounterState'
+import CounterHooksReducer from './components/CounterHooksReducer'
+import CounterHooksState from './components/CounterHooksState'
 import ProfilePage from './components/ProfilePage'
 import CounterSimple from './components/CounterSimple'
 import CounterSimleMore from './components/CounterSimleMore'
@@ -68,11 +68,11 @@ class App extends Component<null, AppState> {
           </div>
           <hr />
           <div className="child-container">
-            <CounterRedux initialCount={100} />
+            <CounterHooksReducer initialCount={100} />
           </div>
           <hr />
           <div className="child-container">
-            <CounterState initialCount={100} />
+            <CounterHooksState initialCount={100} />
           </div>
           <hr />
           <div
