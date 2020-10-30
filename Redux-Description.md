@@ -3,7 +3,7 @@
 
 #### 💛💛 reducer 定义阶段 💛💛
 - 1.1: 定义常量: 被 约束Action的interface使用,其目的是规定 action的结构
-- 1.2: 定义常量: 被 reducer 函数使用, 根据 action.type 处理逻辑, (由于Action结构被约束过, 一定存在type属性,且value就是定义的常量之一)
+- 1.2: 定义常量: 被 reducer 函数使用, 根据 action.type 处理逻辑, (由于Action结构被约束过, 一定存在type属性, 且value就是定义的常量之一)
 - 2:   定义Action interface (IAction), 用来约束 action 的结构
 - 3:   定义 action:IAction 来约束
 - 4.1: 定义 <ModuleState> 结构, 用于 reducer 函数返回值类型的约束
@@ -47,7 +47,7 @@
 
 
 ####  💛💛 Codes 💛💛
-- `src/reducers/calculate.ts`
+- `src/reducers/config.ts`
 ```ts
 export const DARK = 'DARK'
 export const LIGHT = 'LIGHT'

@@ -37,7 +37,7 @@ class CounterSimpleMore extends React.Component<Props, any> {
 const mapStateToProps = (state: RootState) => {
   return {
     num: state.calculate.num,
-    color: state.calculate.les,
+    color: state.calculate.color,
   }
 }
 

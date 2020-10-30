@@ -34,11 +34,11 @@ export const reduceAction: IAction = {
  */
 export interface CalculateState {
   num: number
-  les: string
+  color: string
 }
 
 const initData = {
-  les: '',
+  color: '',
   num: 0,
 }
 
@@ -57,17 +57,18 @@ const calculate = (
   state: CalculateState = initData,
   action: IAction
 ): CalculateState => {
+  const colorValue: string = (Math.random() * 10000000).toString().slice(0, 6)
   // debugger
   switch (action.type) {
     case INCREMENT:
       return {
         num: state.num + action.count,
-        les: (Math.random() * 10000000).toString().slice(0, 6),
+        color: colorValue,
       }
     case REDUCE:
       return {
         num: state.num - action.count > 0 ? state.num - action.count : 0,
-        les: (Math.random() * 10000000).toString().slice(0, 6),
+        color: colorValue,
       }
     default:
       return state
