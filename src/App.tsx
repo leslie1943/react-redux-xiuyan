@@ -6,7 +6,7 @@ import SecondChild from './components/SecondChild'
 import CounterRedux from './components/CounterRedux'
 import CounterState from './components/CounterState'
 import ProfilePage from './components/ProfilePage'
-import Counter from './components/Counter'
+import CounterSimple from './components/CounterSimple'
 import './demo/declare-demo'
 
 interface AppState {
@@ -86,16 +86,8 @@ class App extends Component<null, AppState> {
             style={{ border: '1px solid yellow', padding: 80 }}
             className="child-container"
           >
-            <Counter />
+            <CounterSimple />
           </div>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Not finish.
-          </a>
           <p></p>
         </header>
       </div>
