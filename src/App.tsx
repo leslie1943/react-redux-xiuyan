@@ -9,6 +9,7 @@ import ProfilePage from './components/ProfilePage'
 import CounterSimple from './components/CounterSimple'
 import CounterSimleMore from './components/CounterSimleMore'
 import ConfigSetting from './components/ConfigSetting'
+import TodoDemo from './components/TodoDemo'
 import './demo/declare-demo'
 
 interface AppState {
@@ -101,6 +102,14 @@ class App extends Component<null, AppState> {
           >
             <ConfigSetting />
           </div>
+          <hr />
+          <div
+            style={{ border: '1px solid #f56c6c', padding: 120 }}
+            className="child-container"
+          >
+            <TodoDemo />
+          </div>
+
           <p></p>
         </header>
       </div>
