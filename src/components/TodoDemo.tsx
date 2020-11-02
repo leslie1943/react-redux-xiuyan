@@ -18,12 +18,6 @@ class TodoDemo extends React.Component<Props> {
 
     return (
       <div>
-        {/* 显示数据 */}
-        {this.props.todoItems &&
-          this.props.todoItems.map((item) => {
-            return <p>{item.name}</p>
-          })}
-        {!this.props.todoItems.length && <div>暂无待办事项</div>}
         {/* 添加静态数据 */}
         <button style={btnStyle} onClick={this.props.add}>
           To Add static data
@@ -41,6 +35,13 @@ class TodoDemo extends React.Component<Props> {
         <button style={btnStyle} onClick={this.props.reduce}>
           To Reduce data
         </button>
+
+        {/* 显示数据 */}
+        {this.props.todoItems &&
+          this.props.todoItems.map((item) => {
+            return <p>{item.name}</p>
+          })}
+        {!this.props.todoItems.length && <div>暂无待办事项</div>}
       </div>
     )
   }

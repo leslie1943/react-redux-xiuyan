@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
-import './demo/declare-demo'
+import ConfigSetting from '../../components/ConfigSetting'
 
-class App extends Component<null, null> {
+class ReducerConfig extends Component<null, null> {
   render() {
     return (
       <div className="App">
@@ -11,12 +10,13 @@ class App extends Component<null, null> {
             style={{ border: '1px solid #f56c6c', padding: 120 }}
             className="child-container"
           >
-            Welcome page
+            <ConfigSetting />
           </div>
+          <hr />
         </header>
       </div>
     )
   }
 }
 
-export default App
+export default ReducerConfig

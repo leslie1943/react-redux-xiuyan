@@ -3,7 +3,7 @@
 
 #### 💛💛 reducer 定义阶段 💛💛
 - 1.1: 定义常量: 被 约束Action的interface使用,其目的是规定 action的结构
-- 1.2: 定义常量: 被 reducer 函数使用, 根据 action.type 处理逻辑, (由于Action结构被约束过, 一定存在type属性, 且value就是定义的常量之一)
+- 1.2: 定义常量: 被 reducer 函数使用, 根据 action.type 处理逻辑, (由于Action结构被约束过, 一定存在type属性,且value就是定义的常量之一)
 - 2:   定义Action interface (IAction), 用来约束 action 的结构
 - 3:   定义 action:IAction 来约束
 - 4.1: 定义 <ModuleState> 结构, 用于 reducer 函数返回值类型的约束
@@ -47,7 +47,7 @@
 
 
 ####  💛💛 Codes 💛💛
-- `src/reducers/config.ts`
+- `src/reducers/calculate.ts`
 ```ts
 export const DARK = 'DARK'
 export const LIGHT = 'LIGHT'
@@ -212,4 +212,76 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister()
 
+```
+
+
+#### 定义动态 function 用来动态接受action的参数
+```js
+/**
+ * >>>>>>>>>> 🎃🎃🎃 定义方法返回 action 的方式(带参数) 🎃🎃🎃
+ * 在组件中的 Map 方法 ⏬⏬⏬⏬⏬
+ *   const mapDispatchToProps = (dispatch: ReduxDispatch) => ({
+ *     // action 回传参数
+ *     onPush: (item: ItemState) => dispatch(addTodo(item)),
+ *   })
+ *
+ * 在组件中的 Props   ⏬⏬⏬⏬⏬
+ * interface Props {
+ *    onPush: (item: ItemState) => void
+ * }
+ * 在组件中的 调用   ⏬⏬⏬⏬⏬
+ *  <button onClick={() => this.props.onPush({ name: Math.random().toString(), status: 0 })}>
+ *    To Push
+ *  </button>
+ */
+export const addTodo = (item: ItemState) => {
+  return {
+    type: ADD,
+    item,
+  }
+}
+
+// ----------------------- biz component mapDispatchToProps
+// 将 action 映射到 组件的 props
+// 使用 dispatch来触发 action 可以影响到 reducer 模块下对应的函数,进而更新 模块下的 state
+const mapDispatchToProps = (dispatch: ReduxDispatch) => ({
+  // action 回传参数
+  onPush: (item: ItemState) => dispatch(addTodo(item)),
+})
+
+// ----------------------- biz component class
+interface Props {
+  onPush: (item: ItemState) => void
+  todoItems: ItemState[]
+}
+
+class TodoDemo extends React.Component<Props> {
+  render() {
+    const btnStyle = {
+      marginRight: 10,
+    }
+
+    return (
+      <div>
+        {/* 显示数据 */}
+        {this.props.todoItems &&
+          this.props.todoItems.map((item) => {
+            return <p>{item.name}</p>
+          })}
+        {!this.props.todoItems.length && <div>暂无待办事项</div>}
+
+        {/* 添加动态数据 */}
+        <button
+          style={btnStyle}
+          onClick={() =>
+            this.props.onPush({ name: Math.random().toString(), status: 0 })
+          }
+        >
+          To Push dynamic data
+        </button>
+
+      </div>
+    )
+  }
+}
 ```

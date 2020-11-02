@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
-import './demo/declare-demo'
+import TodoDemo from '../../components/TodoDemo'
 
-class App extends Component<null, null> {
+class ReducerTodo extends Component<null, null> {
   render() {
     return (
       <div className="App">
@@ -11,7 +10,7 @@ class App extends Component<null, null> {
             style={{ border: '1px solid #f56c6c', padding: 120 }}
             className="child-container"
           >
-            Welcome page
+            <TodoDemo />
           </div>
         </header>
       </div>
@@ -19,4 +18,4 @@ class App extends Component<null, null> {
   }
 }
 
-export default App
+export default ReducerTodo
