@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TodoDemo from '../../components/TodoDemo'
 
-class ReducerTodo extends Component<null, null> {
+class ReducerTodo extends Component<any, any> {
   render() {
     return (
       <div className="App">

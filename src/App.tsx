@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import './demo/declare-demo'
 
-class App extends Component<null, null> {
+class App extends Component {
   render() {
     return (
       <div className="App">

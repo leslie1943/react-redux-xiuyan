@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ConfigSetting from '../../components/ConfigSetting'
 
-class ReducerConfig extends Component<null, null> {
+class ReducerConfig extends Component<any, any> {
   render() {
     return (
       <div className="App">

@@ -8,7 +8,7 @@ interface ProfileState {
   readonly profile: string
 }
 
-class Profile extends Component<null, ProfileState> {
+class Profile extends Component<any, ProfileState> {
   readonly state = {
     title: 'parent title',
     name: 'leslie',

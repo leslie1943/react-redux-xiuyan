@@ -9,7 +9,7 @@ interface ParentChild {
   readonly profile: string
 }
 
-class ParentChildState extends Component<null, ParentChild> {
+class ParentChildState extends Component<any, ParentChild> {
   readonly state = {
     title: 'parent title',
     name: 'leslie',

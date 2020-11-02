@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CounterSimple from '../../components/CounterSimple'
 import CounterSimleMore from '../../components/CounterSimleMore'
 
-class ReducerCounter extends Component<null, null> {
+class ReducerCounter extends Component<any, any> {
   render() {
     return (
       <div className="App">

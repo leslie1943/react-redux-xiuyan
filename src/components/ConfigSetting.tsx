@@ -11,7 +11,7 @@ interface Props {
   toDark: () => any
 }
 
-class CounterSimple extends React.Component<Props, any> {
+class CounterSimple extends React.Component<Props> {
   render() {
     const btnStyle = {
       marginRight: 10,
