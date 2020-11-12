@@ -7,11 +7,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div
-            style={{ border: '1px solid #f56c6c', padding: 120 }}
-            className="child-container"
-          >
-            Welcome page
+          <div style={{ border: '1px solid #f56c6c', padding: 120 }}>
+            Welcome
           </div>
         </header>
       </div>

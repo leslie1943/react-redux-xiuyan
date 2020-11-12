@@ -3,31 +3,18 @@ import ReactDOM from 'react-dom'
 import 'antd/dist/antd.css'
 import './index.scss'
 
-import { routes } from './routes'
-import RouteLink from './components/RouteLink'
-
-// import { routes } from './routes/index'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 
 // below 2 import sentences for Redux
 import { Provider } from 'react-redux'
 // 引入全局的reducers(store: 单一数据源)
 import { store } from './reducers'
+// 引入布局
+import MainLayout from './layout/MainLayout'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <RouteLink />
-      <div style={{ margin: 0 }}>
-        <Switch>
-          {/* exact is important attributes here */}
-          {routes.map(({ path, component }, index) => (
-            <Route key={index} exact path={path} component={component} />
-          ))}
-        </Switch>
-      </div>
-    </Router>
+    <MainLayout />
   </Provider>,
   document.getElementById('root')
 )

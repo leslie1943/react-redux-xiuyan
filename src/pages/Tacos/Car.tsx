@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default function Car() {
-  return <div>Car</div>
+  return <div style={{ color: 'red' }}>Car</div>
 }
