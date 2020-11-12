@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import 'antd/dist/antd.css'
 import './index.scss'
+
 import { routes } from './routes'
 import RouteLink from './components/RouteLink'
 
@@ -19,12 +21,10 @@ ReactDOM.render(
       <RouteLink />
       <div style={{ margin: 0 }}>
         <Switch>
-          {/* <MainLayout> */}
           {/* exact is important attributes here */}
           {routes.map(({ path, component }, index) => (
             <Route key={index} exact path={path} component={component} />
           ))}
-          {/* </MainLayout> */}
         </Switch>
       </div>
     </Router>
