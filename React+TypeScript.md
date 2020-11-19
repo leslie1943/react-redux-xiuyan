@@ -196,8 +196,8 @@ export interface Action {
 - 2 在 具体的 action 中添加 payload形参, 返回体中添加属性
 ```js
 import { INCREMENT, DECREMENT } from '../count'
-export const addc = (payload: number) => ({ type: INCREMENT, payload })
-export const reduce = (payload: number) => ({ type: DECREMENT, payload })
+export const addc = (payload: number) /* 🧡 */ => ({ type: INCREMENT, payload })
+export const reduce = (payload: number) /* 🧡 */ => ({ type: DECREMENT, payload })
 
 ```
 

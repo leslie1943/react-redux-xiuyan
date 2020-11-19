@@ -1,34 +1,35 @@
+// 定义 action 枚举
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
+// 约束 action
 export interface Action {
   type: typeof INCREMENT | typeof DECREMENT
   payload: number
 }
 
-// export const incrementAction: Action = {
-//   type: INCREMENT,
-// }
-// export const decrementAction: Action = {
-//   type: DECREMENT,
-// }
-
+// 约束 state
 export interface CountState {
   count: number
 }
 
+// 初始 state
+const initialState: CountState = {
+  count: 0,
+}
+
 const counter = (
-  state: CountState = { count: 0 },
+  state: CountState = initialState,
   action: Action
 ): CountState => {
   switch (action.type) {
     case INCREMENT:
       return {
-        count: state.count + (action.payload ? action.payload : 0),
+        count: state.count + action.payload,
       }
     case DECREMENT:
       return {
-        count: state.count - (action.payload ? action.payload : 0),
+        count: state.count - action.payload,
       }
     default:
       return state

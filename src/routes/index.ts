@@ -15,6 +15,7 @@ import ReduxCount from '../pages/ReduxCount/index'
 
 import { RouteProps } from 'react-router-dom'
 import WillMatch from 'src/pages/RoutesDemo/WillMatch'
+import ReduxModal from '../components/Modal'
 
 interface RouteConfigState extends RouteProps {
   name?: string
@@ -92,6 +93,13 @@ const routes: Array<RouteConfigState> = [
         path: '/redux-counter',
         component: ReduxCount,
         name: 'Redux counter',
+        hide: false,
+        isExact: true,
+      },
+      {
+        path: '/redux-modal',
+        component: ReduxModal,
+        name: 'Redux modal',
         hide: false,
         isExact: true,
       },
