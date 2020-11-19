@@ -4,7 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The target is just for learning React and some related technologies, like 
 - `react`: lifecycles, component, hooks
-- `react-redux`: state management
+- `redux`: state management
+- `react-redux`: connect react + redux
 - `react-router`: router
 
 
@@ -20,4 +21,8 @@ In the project directory, you can run:
 
 
 #### some points
-- `CounterSimleMore` 和 `CounterSimle` 两个组件是为了测试 `react-redux` 状态管理的, 2个组件操作同一个数据源 ``
+- `CounterSimleMore` 和 `CounterSimle` 两个组件是为了测试 `react-redux` 状态管理的, 2个组件操作同一个数据源
+
+
+#### UI framework
+- ant design 4.8.2

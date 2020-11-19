@@ -5,22 +5,26 @@ import ProfileClass from '../pages/ProfileClass'
 import ReducerCounter from '../pages/ReducerCounter'
 import ReducerConfig from '../pages/ReducerConfig'
 import ReducerTodo from '../pages/ReducerTodo'
-// import Tacos from '../pages/Tacos'
-import Car from '../pages/Tacos/Car'
-import Bus from '../pages/Tacos/Bus'
-import TacoDemo from '../pages/Tacos/Taco'
+import RoutesDemo from '../pages/RoutesDemo/RoutesDemo'
+import RoutesParams from '../pages/RoutesDemo/RoutesParams'
+import RoutesParamsDetail from '../pages/RoutesDemo/RoutesParamsDetail'
+import NoMatchExample from '../pages/RoutesDemo/NoMatchExample'
+import OldMatch from '../pages/RoutesDemo/OldMatch'
+import SetStateDemo from '../pages/SetState/index'
+import ReduxCount from '../pages/ReduxCount/index'
 
 import { RouteProps } from 'react-router-dom'
+import WillMatch from 'src/pages/RoutesDemo/WillMatch'
 
-interface RoutePropsMore extends RouteProps {
+interface RouteConfigState extends RouteProps {
   name?: string
   icon?: string
-  children?: Array<RoutePropsMore>
+  children?: Array<RouteConfigState>
   hide?: boolean
   isExact?: boolean
 }
 
-const routes: Array<RoutePropsMore> = [
+const routes: Array<RouteConfigState> = [
   {
     path: '/',
     component: App,
@@ -40,6 +44,13 @@ const routes: Array<RoutePropsMore> = [
     path: '/state',
     component: ParentChildState,
     name: 'State',
+    hide: false,
+    isExact: true,
+  },
+  {
+    path: '/set-state',
+    component: SetStateDemo,
+    name: 'setState',
     hide: false,
     isExact: true,
   },
@@ -77,33 +88,61 @@ const routes: Array<RoutePropsMore> = [
         hide: false,
         isExact: true,
       },
+      {
+        path: '/redux-counter',
+        component: ReduxCount,
+        name: 'Redux counter',
+        hide: false,
+        isExact: true,
+      },
     ],
   },
   {
-    path: '/tacos',
+    path: '/routes',
     name: 'Routes Nest',
     isExact: true,
     hide: false,
     children: [
       {
-        path: '/tacos/bus',
-        name: 'bus',
-        component: Bus,
+        path: '/routes/params',
+        name: 'routes-params',
+        component: RoutesParams,
         hide: false,
         isExact: true,
       },
       {
-        path: '/tacos/car',
-        name: 'car',
-        component: Car,
+        path: '/routes/demo',
+        name: 'routes-demo',
+        component: RoutesDemo,
         hide: false,
         isExact: true,
       },
       {
-        path: '/xxx/:id',
-        name: 'xxx',
-        component: TacoDemo,
+        path: '/routes-params-detail/:id',
+        name: 'routes params',
+        component: RoutesParamsDetail,
         hide: true,
+        isExact: true,
+      },
+      {
+        path: '/routes/no-match',
+        name: 'routes-no-match',
+        component: NoMatchExample,
+        hide: false,
+        isExact: true,
+      },
+      {
+        path: '/routes/old-match',
+        name: 'old-match',
+        component: OldMatch,
+        hide: false,
+        isExact: true,
+      },
+      {
+        path: '/routes/will-match',
+        name: 'will-match',
+        component: WillMatch,
+        hide: false,
         isExact: true,
       },
     ],

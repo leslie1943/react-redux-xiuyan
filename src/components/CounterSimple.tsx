@@ -50,4 +50,8 @@ const mapDispatchToProps = (dispath: Dispatch) => ({
 })
 
 // 注入到组件的props
+// connect的作用(1): 订阅 store, 当 store 的状态发生变化, 会重新渲染组件
+// connect的作用(2): 获取store中的状态, 将状态通过组件的 props 属性 映射给组件
+// connect的作用(3): 获取 dispatch 方法 => 在组件中可以使用 props.dispatch 了
+// 语法: connect()()
 export default connect(mapStateToProps, mapDispatchToProps)(CounterSimple)

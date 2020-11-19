@@ -57,18 +57,18 @@ const calculate = (
   state: CalculateState = initData,
   action: IAction
 ): CalculateState => {
-  const colorValue: string = (Math.random() * 10000000).toString().slice(0, 6)
+  const color: string = (Math.random() * 10000000).toString().slice(0, 6)
   // debugger
   switch (action.type) {
     case INCREMENT:
       return {
         num: state.num + action.count,
-        color: colorValue,
+        color: color,
       }
     case REDUCE:
       return {
         num: state.num - action.count > 0 ? state.num - action.count : 0,
-        color: colorValue,
+        color: color,
       }
     default:
       return state

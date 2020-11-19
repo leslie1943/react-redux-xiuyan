@@ -23,11 +23,13 @@ export interface ConfigState {
   fontSize: number
 }
 
+// 初始State
 const initConfig = {
   color: 'papayawhip',
   fontSize: 12,
 }
 
+// 当前 module 的 reducer: 用于处理状态的函数
 const config = (
   state: ConfigState = initConfig,
   action: IAction

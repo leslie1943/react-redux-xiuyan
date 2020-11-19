@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="plus">+</button>
+    <span id="count">0</span>
+    <button id="minus">-</button>
+    <script src="redux.min.js"></script>
+    <script>
+        // 3: 存储默认状态
+        var initialState = {
+            count: 0
+        }
+        /**
+         * 2: 创建 reducer 函数, 作为 createStore的第一个参数
+         * reducer 函数 返回什么, store中就存储的状态就是什么
+         * 形参 state 就是 createStore 的第二个参数
+         * 形参一般会有一个默认状态 (initialState)
+         * 
+         * action 是 reducer 的第二个参数
+         */
+        function reducer(state = initialState, action) {
+            switch (action.type) {
+                case 'increment':
+                    return { count: state.count + 1 }
+                    break
+                case 'decrement':
+                    return { count: state.count - 1 }
+                    break
+                default:
+                    return state
+            }
+
+        }
+        // 1: 创建 store 对象
+        var store = Redux.createStore(reducer)
+
+        // 4: 定义 action, "type" 是必须属性
+        var increment = { type: 'increment' }
+        var decrement = { type: 'decrement' }
+
+        // 5: 获取按钮, 给按钮添加点击事件
+        document.getElementById('plus').onclick = function () {
+            // 6: 触发 action, reducer 函数 会执行, 并且把 action 作为 reducer 函数的第二个参数传入
+            store.dispatch(increment)
+        }
+
+        // 5: 获取按钮, 给按钮添加点击事件
+        document.getElementById('minus').onclick = function () {
+            // 6: 触发 action, reducer 函数 会执行, 并且把 action 作为 reducer 函数的第二个参数传入
+            store.dispatch(decrement)
+        }
+
+        // 7: 订阅 store, 当 store 中的数据发生变化的时候, subscribe 的回调函数就会执行
+        store.subscribe(() => {
+            // 获取store对象中存储的状态
+            document.getElementById('count').innerHTML = store.getState().count
+        })
+    </script>
+</body>
+
+<!-- 
+    // 创建 store 状态容器
+    const store = Redux.createStore(reducer)
+    // 创建用于处理状态的 reducer 函数
+    function reducer(state = initialState, action){
+
+    }
+    // 获取状态
+    store.getState()
+    // 订阅状态
+    store.subscribe(() => {
+
+    })
+    // 触发action
+    store.dispatch({type:'xxxx'})
+ -->
+
+</html>

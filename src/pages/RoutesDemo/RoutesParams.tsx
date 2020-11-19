@@ -5,16 +5,16 @@ export default function Bus() {
   return (
     <ul>
       <li>
-        <Link to="/xxx/1943">1943</Link>
+        <Link to="/routes-params-detail/1943">1943</Link>
       </li>
       <li>
-        <Link to={'/xxx/1840'}>1840</Link>
+        <Link to={'/routes-params-detail/1840'}>1840</Link>
       </li>
       <li>
-        <Link to="/xxx/2002">2002</Link>
+        <Link to="/routes-params-detail/2002">2002</Link>
       </li>
       <li>
-        <Link to="/xxx/3721">3721</Link>
+        <Link to="/routes-params-detail/3721">3721</Link>
       </li>
     </ul>
   )
