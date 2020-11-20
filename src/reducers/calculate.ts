@@ -37,7 +37,7 @@ export interface CalculateState {
   color: string
 }
 
-const initData = {
+const initData: CalculateState = {
   color: '',
   num: 0,
 }
@@ -62,12 +62,12 @@ const calculate = (
   switch (action.type) {
     case INCREMENT:
       return {
-        num: state.num + action.count,
+        num: state.num + action.count || 0,
         color: color,
       }
     case REDUCE:
       return {
-        num: state.num - action.count > 0 ? state.num - action.count : 0,
+        num: state.num - (action.count > 0 ? state.num - action.count : 0),
         color: color,
       }
     default:

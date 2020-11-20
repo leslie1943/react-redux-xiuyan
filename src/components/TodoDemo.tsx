@@ -38,8 +38,8 @@ class TodoDemo extends React.Component<Props> {
 
         {/* 显示数据 */}
         {this.props.todoItems &&
-          this.props.todoItems.map((item) => {
-            return <p>{item.name}</p>
+          this.props.todoItems.map((item, index) => {
+            return <p key={index}>{item.name}</p>
           })}
         {!this.props.todoItems.length && <div>暂无待办事项</div>}
       </div>

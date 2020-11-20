@@ -25,11 +25,11 @@ const counter = (
   switch (action.type) {
     case INCREMENT:
       return {
-        count: state.count + action.payload,
+        count: state.count + action.payload || 0,
       }
     case DECREMENT:
       return {
-        count: state.count - action.payload,
+        count: state.count - action.payload || 0,
       }
     default:
       return state

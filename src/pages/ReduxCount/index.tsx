@@ -24,12 +24,18 @@ class ReduxCounter extends Component<Props, any> {
           <Button> {this.props.counter}</Button>
           <Button onClick={this.props.reduce}> - by reduce</Button>
         </div> */}
-        <div>
-          <Button onClick={() => this.props.add(5)}>
+        <div style={{ margin: 100 }}>
+          <Button type="primary" size="large" onClick={() => this.props.add(5)}>
             + by actionCreator add
           </Button>
-          <Button> {this.props.counter}</Button>
-          <Button onClick={() => this.props.reduce(5)}>
+          <span style={{ padding: '10px 10px' }}>
+            <Button> {this.props.counter}</Button>
+          </span>
+          <Button
+            type="ghost"
+            size="large"
+            onClick={() => this.props.reduce(5)}
+          >
             - by actionCreator reduce
           </Button>
         </div>
