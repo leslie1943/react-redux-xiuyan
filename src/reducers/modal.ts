@@ -7,7 +7,6 @@ export interface ModalAction {
   type: typeof SHOWMODAL | typeof HIDEMODAL
 }
 
-// 约束 state
 export interface ModalState {
   show: boolean
 }

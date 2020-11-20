@@ -16,7 +16,13 @@ export interface RootState {
 }
 
 // 全局可以创建多个 reducer 在这里统一在一起
-const rootReducer = combineReducers({ calculate, config, todo, counter, modal })
+const rootReducer = combineReducers({
+  calculate, // {num: number,color: string}
+  config, // {color: string, fontSize: number}
+  todo, // {items: Array<ItemState>}
+  counter, // {count: number}
+  modal, //{show: boolean}
+})
 
 /***
  * 🔯🔯🔯🔯 Redux Step-1: 通过 createStore 完成 store 对象的创建
