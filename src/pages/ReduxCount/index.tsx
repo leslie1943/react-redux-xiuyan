@@ -11,6 +11,7 @@ interface Props {
   // reduce: () => any
   add: (payload: number) => any
   reduce: (payload: number) => any
+  add_async: (payload: number) => any
   counter: number
 }
 class ReduxCounter extends Component<Props, any> {
@@ -25,7 +26,11 @@ class ReduxCounter extends Component<Props, any> {
           <Button onClick={this.props.reduce}> - by reduce</Button>
         </div> */}
         <div style={{ margin: 100 }}>
-          <Button type="primary" size="large" onClick={() => this.props.add(5)}>
+          <Button
+            type="primary"
+            size="large"
+            onClick={() => this.props.add_async(5)}
+          >
             + by actionCreator add
           </Button>
           <span style={{ padding: '10px 10px' }}>

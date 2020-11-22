@@ -12,3 +12,20 @@
 ```js
 export default store => next => action => { }
 ```
+
+
+#### Redux-thunk
+- 允许在中间件 `middleware` 程序中加入异步代码
+- `npm install redux-thunk`
+- `import thunk from 'redux-thunk'`
+- `export const store = createStore(rootReducer, applyMiddleware(thunk))`
+```js
+// 中间件-异步
+const loadPosts = () => async dispatch => {
+    // 异步代码
+    const posts = await axios.get('/api/post').then(res => res.data)
+    // 使用 dispatch 执行 action, 
+    // 保存异步执行的结果
+    dispatch({type: 'POST_LOADED', payload: posts})
+}
+```

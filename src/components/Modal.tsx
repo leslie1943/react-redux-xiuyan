@@ -9,6 +9,8 @@ export interface ModalProps {
   showStatus: boolean
   show: () => any
   hide: () => any
+  show_async: () => any
+  hide_async: () => any
 }
 
 function Modal(props: ModalProps) {
@@ -16,6 +18,8 @@ function Modal(props: ModalProps) {
     <div>
       <Button onClick={props.show}>显示</Button>
       <Button onClick={props.hide}>隐藏</Button>
+      <Button onClick={props.show_async}>显示 async</Button>
+      <Button onClick={props.hide_async}>隐藏 async</Button>
       {props.showStatus && (
         <div
           style={{
