@@ -1,6 +1,7 @@
 // 定义 action 枚举
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
+export const INCREMENT_ASYNC = 'increment_async'
 
 // 约束 action
 export interface Action {
