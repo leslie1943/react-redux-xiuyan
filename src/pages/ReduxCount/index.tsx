@@ -12,7 +12,7 @@ interface Props {
   add: (payload: number) => any
   reduce: (payload: number) => any
   add_async: (payload: number) => any
-  increment_async: () => any
+  increment_async: (payload: number) => any
   counter: number
 }
 class ReduxCounter extends Component<Props, any> {
@@ -37,7 +37,7 @@ class ReduxCounter extends Component<Props, any> {
           <Button
             type="primary"
             size="large"
-            onClick={this.props.increment_async}
+            onClick={() => this.props.increment_async(20)}
           >
             + by actionCreator add with saga
           </Button>

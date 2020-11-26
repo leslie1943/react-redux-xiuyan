@@ -74,3 +74,14 @@ sagaMiddleware.run(counterSaga)
 9. 然后执行`takeEvery(TYPE)`.
 10. 触发异步方法(后台接口)执行,将结果传递给下一步
 11. 然后执行`put(add(result))`同步方法,完成`state`的更新
+
+
+#### Saga 中 action 传参
+1. 组件中点击按钮触发 `onClick={() => this.props.increment_async(20)}`
+2. 在定义这个`increment_async` `action creator` 函数的时候传递一个形参
+3. 触发这个 `action` 的时候被`saga`接收了
+4. `saga`接收之后运行了一个方法, 这个方法有个形参`action`, 可以通过`action.payload`拿到这个参数
+5. `saga`中`put`又触发了`action`将参数传递给同步 `action`
+6. 触发的同步 `action` 被 `reducer` 接收，完成状态更新
+
+`biz component` === >>>> `Async Action` === >>>> `Saga` === >>>> `takeEvery()` === >>>> `put()` === >>>> `Sync Action` === >>>> `reducers`

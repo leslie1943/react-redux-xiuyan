@@ -5,7 +5,7 @@ export const INCREMENT_ASYNC = 'increment_async'
 
 // 约束 action
 export interface Action {
-  type: typeof INCREMENT | typeof DECREMENT
+  type: typeof INCREMENT | typeof DECREMENT | typeof INCREMENT_ASYNC
   payload: number
 }
 

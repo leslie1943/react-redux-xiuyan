@@ -19,4 +19,7 @@ export const add_async = (payload: number) => (dispatch: ReduxDispatch) => {
 
 // 触发异步的 action
 // 它的触发会被 sagaMiddleware 捕获到, 执行相应的 takeEvery 方法
-export const increment_async = () => ({ type: INCREMENT_ASYNC })
+export const increment_async = (payload: number) => ({
+  type: INCREMENT_ASYNC,
+  payload,
+})
