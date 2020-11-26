@@ -6,16 +6,16 @@ import { counter, CountState } from './count'
 import { modal, ModalState } from './modal'
 // import logger from './middleware/logger'
 // import test from './middleware/test'
-// import thunk from './middleware/thunk'
+import thunk from './middleware/thunk'
 
 // import thunk from 'redux-thunk'
-import createSagaMiddleware from 'redux-saga'
-import counterSaga from './sagas/counter.saga'
+// import createSagaMiddleware from 'redux-saga'
+// import counterSaga from './sagas/counter.saga'
 
 // Dispatch 的 类型别名
 export type ReduxDispatch = Dispatch
 // 创建 sagaMiddleware
-const sagaMiddleware = createSagaMiddleware()
+// const sagaMiddleware = createSagaMiddleware()
 
 // RootState 中的定义 和 各个 module 中导出的 reducer 保持一致
 // 因为 RootState 只是对各个 store 数据的形状的描述
@@ -43,7 +43,7 @@ const rootReducer = combineReducers({
  */
 
 // 注册中间件: applyMiddleware(middleware name)
-// export const store = createStore(rootReducer, applyMiddleware(thunk))
-export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
+export const store = createStore(rootReducer, applyMiddleware(thunk))
+// export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 // 启动counterSaga
-sagaMiddleware.run(counterSaga)
+// sagaMiddleware.run(counterSaga)

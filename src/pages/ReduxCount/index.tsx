@@ -27,20 +27,20 @@ class ReduxCounter extends Component<Props, any> {
           <Button onClick={this.props.reduce}> - by reduce</Button>
         </div> */}
         <div style={{ margin: 100 }}>
-          {/* <Button
+          <Button
             type="primary"
             size="large"
             onClick={() => this.props.add_async(5)}
           >
             + by actionCreator add
-          </Button> */}
-          <Button
+          </Button>
+          {/* <Button
             type="primary"
             size="large"
             onClick={() => this.props.increment_async(20)}
           >
             + by actionCreator add with saga
-          </Button>
+          </Button> */}
           <span style={{ padding: '10px 10px' }}>
             <Button> {this.props.counter}</Button>
           </span>
