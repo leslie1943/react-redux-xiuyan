@@ -75,7 +75,6 @@ sagaMiddleware.run(counterSaga)
 10. 触发异步方法(后台接口)执行,将结果传递给下一步
 11. 然后执行`put(add(result))`同步方法,完成`state`的更新
 
-
 #### Saga 中 action 传参
 1. 组件中点击按钮触发 `onClick={() => this.props.increment_async(20)}`
 2. 在定义这个`increment_async` `action creator` 函数的时候传递一个形参
@@ -85,3 +84,22 @@ sagaMiddleware.run(counterSaga)
 6. 触发的同步 `action` 被 `reducer` 接收，完成状态更新
 
 `biz component` === >>>> `Async Action` === >>>> `Saga` === >>>> `takeEvery()` === >>>> `put()` === >>>> `Sync Action` === >>>> `reducers`
+
+#### Saga 的文件拆分
+1. 分别按照模块拆分不同的小的 `saga` 文件.
+2. 然后通过`all`方法合并成一个总的 `rootSaga` 文件,导出一个`generator`方法
+```js
+import { all } from 'redux-saga/effects'
+import counterSaga from './counter.saga'
+import modalSaga from './modal.saga'
+
+export default function* rootSaga() {
+  yield all([counterSaga(), modalSaga()]) // 函数的调用
+}
+```
+3. 在 `reducers`中导入`rootSaga`, 启用合并的`saga`
+```js
+import rootSaga from './sagas/root.saga'
+// 启动 合并的 saga
+sagaMiddleware.run(rootSaga)
+```

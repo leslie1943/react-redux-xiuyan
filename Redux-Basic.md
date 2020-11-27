@@ -240,7 +240,7 @@ export const reduce = (payload: number) /* 🧡 */ => ({ type: DECREMENT, payloa
 
 ```
 
-- 3 在 module 的reducer中处理 payload
+- 3 在 `module` 的 `reducer` 中 处理 `payload`
 ```js
 const counter = (
   state: CountState = { count: 0 },

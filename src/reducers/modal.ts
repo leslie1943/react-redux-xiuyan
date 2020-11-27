@@ -1,6 +1,8 @@
 // 定义 action 枚举
 export const SHOWMODAL = 'showModal'
 export const HIDEMODAL = 'hideModal'
+export const SHOWMODAL_ASYNC = 'showModal_async'
+export const HIDEMODAL_ASYNC = 'hideModal_async'
 
 // 约束 action
 export interface ModalAction {

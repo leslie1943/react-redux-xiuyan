@@ -10,7 +10,8 @@ import { modal, ModalState } from './modal'
 
 // import thunk from 'redux-thunk'
 import createSagaMiddleware from 'redux-saga'
-import counterSaga from './sagas/counter.saga'
+// import counterSaga from './sagas/counter.saga'
+import rootSaga from './sagas/root.saga'
 
 // Dispatch 的 类型别名
 export type ReduxDispatch = Dispatch
@@ -45,5 +46,5 @@ const rootReducer = combineReducers({
 // 注册中间件: applyMiddleware(middleware name)
 // export const store = createStore(rootReducer, applyMiddleware(thunk))
 export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
-// 启动counterSaga
-sagaMiddleware.run(counterSaga)
+// 启动 合并的 saga
+sagaMiddleware.run(rootSaga)
