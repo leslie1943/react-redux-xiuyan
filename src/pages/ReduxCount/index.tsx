@@ -7,39 +7,21 @@ import { Button } from 'antd'
 import * as counterActions from '../../reducers/actions/counter'
 
 interface Props {
-  // add: () => any
-  // reduce: () => any
-  add: (payload: number) => any
-  reduce: (payload: number) => any
-  add_async: (payload: number) => any
-  increment_async: (payload: number) => any
+  increment: (payload: number) => any
+  decrement: (payload: number) => any
   counter: number
 }
 class ReduxCounter extends Component<Props, any> {
   render() {
     return (
       <div>
-        {/* <div>
-          <Button type="primary" onClick={this.props.add}>
-            + by add{' '}
-          </Button>
-          <Button> {this.props.counter}</Button>
-          <Button onClick={this.props.reduce}> - by reduce</Button>
-        </div> */}
         <div style={{ margin: 100 }}>
-          {/* <Button
-            type="primary"
-            size="large"
-            onClick={() => this.props.add_async(5)}
-          >
-            + by actionCreator add
-          </Button> */}
           <Button
             type="primary"
             size="large"
-            onClick={() => this.props.increment_async(20)}
+            onClick={() => this.props.increment(20)}
           >
-            + by actionCreator add with saga
+            +
           </Button>
           <span style={{ padding: '10px 10px' }}>
             <Button> {this.props.counter}</Button>
@@ -47,9 +29,9 @@ class ReduxCounter extends Component<Props, any> {
           <Button
             type="ghost"
             size="large"
-            onClick={() => this.props.reduce(5)}
+            onClick={() => this.props.decrement(5)}
           >
-            - by actionCreator reduce
+            -
           </Button>
         </div>
       </div>

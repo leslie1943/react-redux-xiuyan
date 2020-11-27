@@ -1,12 +1,17 @@
 #### Redux-actions
+```bash
+  # yarn add redux-actions
+  # yarn add @types/redux-actions
+```
+
 ```js
-import { creaetAction } from 'redux-actions'
+import { createAction } from 'redux-actions'
 
 /*
 increment 这个字符串就是 action里对应的 type 属性值
 createAction 的返回值 就是 我们之前定义的 action creator 函数
 */
-const increment_action = createAction('increment') 
+const increment_action = createAction('increment') // 自动接收组件触发时的参数
 const decrement_action = createAction('decrement')
 ```
 
@@ -18,8 +23,8 @@ import { increment_action, decrement_action } from '../actions/counter.action'
 
 const initialState = { count: 0 }
 const counterReducer = createReducer({
-  [increment_action]: (state, action) => ({ count: state.count + 1}),
-  [decrement_action]: (state, action) => ({ count: state.count - 1}),
+  [increment_action]: (state, action) => ({ count: state.count + action.payload}),
+  [decrement_action]: (state, action) => ({ count: state.count - action.payload}),
 }, initialState)
 
 export default counterReducer
