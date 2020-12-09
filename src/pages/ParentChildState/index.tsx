@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 // import logo from './logo.svg'
-import FirstChild from '../../components/FirstChild'
-import SecondChild from '../../components/SecondChild'
+import FirstChild from '../../components/ChildFirst'
+import SecondChild from '../../components/ChildSecond'
+import { Collapse, Button } from 'antd'
+const { Panel } = Collapse
 
 interface ParentChild {
   readonly title: string
@@ -23,33 +25,34 @@ class ParentChildState extends Component<any, ParentChild> {
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <div className="parent-border" style={{ marginTop: 10 }}>
+      <Collapse bordered={false} defaultActiveKey={['1', '2', '3']}>
+        <Panel header="parent state" key="1">
+          <div>
             <p>Hello,parent name {this.state.name}</p>
             {`【parent title state】: ${this.state.title}`}
-            <p className="child-container">
-              <button onClick={() => this.handleChangeTitle()}>
+            <p>
+              <Button
+                style={{ marginTop: 10 }}
+                onClick={() => this.handleChangeTitle()}
+              >
                 重置state
-              </button>
+              </Button>
             </p>
           </div>
-          <hr />
-          <div className="child-container">
-            <FirstChild
-              emitChangeTitle={this.handleChangeTitle}
-              title={this.state.title}
-            />
-          </div>
-          <hr />
-          <div className="child-container">
-            <SecondChild
-              emitChangeTitle={this.handleChangeTitle}
-              title={this.state.title}
-            />
-          </div>
-        </header>
-      </div>
+        </Panel>
+        <Panel header="first child state" key="2">
+          <FirstChild
+            emitChangeTitle={this.handleChangeTitle}
+            title={this.state.title}
+          />
+        </Panel>
+        <Panel header="second child state" key="3">
+          <SecondChild
+            emitChangeTitle={this.handleChangeTitle}
+            title={this.state.title}
+          />
+        </Panel>
+      </Collapse>
     )
   }
 }

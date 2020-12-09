@@ -3,6 +3,7 @@ import React from 'react'
 import { routes } from '../../routes/index'
 import { Switch, Route } from 'react-router-dom'
 
+// ⭐⭐⭐⭐ 构建项目路由 ⭐⭐⭐⭐
 export default function AppRoutes() {
   return (
     <div style={{ margin: 0 }}>

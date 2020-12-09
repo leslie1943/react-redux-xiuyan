@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Button } from 'antd'
+
 interface FirstChildProps {
   title: string
   emitChangeTitle: Function
@@ -68,13 +70,13 @@ class FirstChild extends Component<FirstChildProps, FirstChildState> {
 
   render() {
     return (
-      <div style={{ border: '1px solid #fff', padding: 10 }}>
+      <div>
         Hello, {this.state.name}
         <p>{`【Title from parent】:${this.props.title}`}</p>
         <div>
-          <button onClick={this.childChangeTitle}>
+          <Button onClick={this.childChangeTitle}>
             first child change title
-          </button>
+          </Button>
         </div>
       </div>
     )

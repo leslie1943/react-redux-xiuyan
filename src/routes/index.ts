@@ -15,7 +15,7 @@ import ReduxCount from '../pages/ReduxCount/index'
 
 import { RouteProps } from 'react-router-dom'
 import WillMatch from 'src/pages/RoutesDemo/WillMatch'
-import ReduxModal from '../components/Modal'
+import ReduxModal from '../components/ReduxModal'
 
 interface RouteConfigState extends RouteProps {
   name?: string

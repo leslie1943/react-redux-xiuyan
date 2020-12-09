@@ -11,6 +11,8 @@ const { SubMenu } = Menu
 interface State {
   collapsed: boolean
 }
+
+// ⭐⭐⭐⭐ 构建菜单 ⭐⭐⭐⭐
 class AppSider extends React.Component<any, State> {
   state = {
     collapsed: false,

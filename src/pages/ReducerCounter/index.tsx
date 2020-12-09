@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import CounterSimple from '../../components/CounterSimple'
-import CounterSimleMore from '../../components/CounterSimleMore'
+import CounterSimple from '../../components/ReduxCounterSimple'
+import CounterSimleMore from '../../components/ReduxCounterSimleMore'
 
 class ReducerCounter extends Component<any, any> {
   render() {

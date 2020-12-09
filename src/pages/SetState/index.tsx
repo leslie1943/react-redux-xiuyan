@@ -53,6 +53,7 @@ class SetStateDemo extends React.Component<any, StateType> {
             margin: 50,
           }}
         >
+          <p> 打开控制台查看 setState 究竟是同步更新还是异步更新 </p>
           <Button type="primary" onClick={this.increment}>
             增加
           </Button>

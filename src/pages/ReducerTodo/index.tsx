@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TodoDemo from '../../components/TodoDemo'
+import TodoDemo from '../../components/ReduxTodoDemo'
 
 class ReducerTodo extends Component<any, any> {
   render() {
