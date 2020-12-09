@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from 'antd'
 
 export default function UseStateDemo() {
   const [text, setText] = useState('初始文本')
@@ -17,13 +18,15 @@ export default function UseStateDemo() {
 
   return (
     <div>
+      <p> ####### useState demo ####### </p>
+
       <p>{text}</p>
       <p>{person.name}</p>
       <p>{person.age}</p>
-      <button onClick={changeText}>change text</button>
-      <button style={{ marginLeft: 10 }} onClick={resetText}>
+      <Button onClick={changeText}>change text</Button>
+      <Button style={{ marginLeft: 10 }} onClick={resetText}>
         reset text
-      </button>
+      </Button>
     </div>
   )
 }

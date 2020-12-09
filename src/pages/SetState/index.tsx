@@ -23,13 +23,13 @@ class SetStateDemo extends React.Component<any, StateType> {
   triple = () => {
     console.info('triple setState前的count', this.state.count)
     this.setState({
-      count: this.state.count + 1,
+      count: this.state.count * 1,
     })
     this.setState({
-      count: this.state.count + 1,
+      count: this.state.count * 1,
     })
     this.setState({
-      count: this.state.count + 1,
+      count: this.state.count * 1,
     })
     console.info('triple setState后的count', this.state.count)
   }

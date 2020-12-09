@@ -1,4 +1,6 @@
-import * as React from 'react'
+import React, { useReducer } from 'react'
+import { Button } from 'antd'
+
 interface State {
   count: number
 }
@@ -10,7 +12,7 @@ type Action = { type: 'reset' } | { type: 'increment' } | { type: 'decrement' }
  * @param state : state 数据
  * @param action : 动作
  */
-function reducer(state: State, action: Action): State {
+function countReducer(state: State, action: Action): State {
   switch (action.type) {
     case 'increment':
       return { count: state.count + 1 }
@@ -33,22 +35,24 @@ interface CounterProps {
  */
 function Counter({ initialCount }: CounterProps) {
   // React.userReducer 返回 state 和 dispatch
-  const [state, dispatch] = React.useReducer(reducer, {
+  const [state, dispatch] = useReducer(countReducer, {
     count: initialCount,
   })
   const styleBtn = { marginLeft: 10 }
   return (
     <div style={{ border: '1px solid #fff', padding: 10 }}>
-      Count: {state.count}
-      <button style={styleBtn} onClick={() => dispatch({ type: 'increment' })}>
+      <p> ####### useReducer demo for count ####### </p>
+      <p>useReducer for count: {state.count}</p>
+      {/* dispatch后根据执行的type会触发 reducer函数的执行 */}
+      <Button style={styleBtn} onClick={() => dispatch({ type: 'increment' })}>
         +
-      </button>
-      <button style={styleBtn} onClick={() => dispatch({ type: 'decrement' })}>
+      </Button>
+      <Button style={styleBtn} onClick={() => dispatch({ type: 'decrement' })}>
         -
-      </button>
-      <button style={styleBtn} onClick={() => dispatch({ type: 'reset' })}>
+      </Button>
+      <Button style={styleBtn} onClick={() => dispatch({ type: 'reset' })}>
         Reset
-      </button>
+      </Button>
     </div>
   )
 }

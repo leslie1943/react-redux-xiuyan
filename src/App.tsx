@@ -46,15 +46,19 @@ class App extends Component<any, AppState> {
   state = {
     loading: true,
   }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loading: false })
+    }, 3000)
+  }
   onChange = (checked: boolean) => {
     this.setState({ loading: !checked })
   }
   render() {
     const { loading } = this.state
     return (
-      <>
+      <div style={{ textAlign: 'center' }}>
         <Switch checked={!loading} onChange={this.onChange} />
-
         <List
           itemLayout="vertical"
           size="large"
@@ -104,7 +108,7 @@ class App extends Component<any, AppState> {
             </List.Item>
           )}
         ></List>
-      </>
+      </div>
     )
   }
 }
