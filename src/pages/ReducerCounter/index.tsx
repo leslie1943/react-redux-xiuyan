@@ -5,20 +5,12 @@ import CounterSimleMore from '../../components/ReduxCounterSimleMore'
 class ReducerCounter extends Component<any, any> {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <div
-            style={{ border: '1px solid #f56c6c', padding: 120 }}
-            className="child-container"
-          >
-            <p>Counter Component 1</p>
-            <CounterSimple />
-            <hr />
-            <p>Counter Component 2</p>
-            <CounterSimleMore />
-          </div>
-          <hr />
-        </header>
+      <div style={{ margin: 50 }}>
+        <p>Counter Component 1</p>
+        <CounterSimple />
+        <hr />
+        <p>Counter Component 2</p>
+        <CounterSimleMore />
       </div>
     )
   }

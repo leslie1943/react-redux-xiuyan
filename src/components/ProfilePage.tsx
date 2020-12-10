@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'antd'
 
 interface UserProps {
   user: string
@@ -13,13 +14,8 @@ class ProfilePage extends React.Component<UserProps> {
 
   render() {
     return (
-      <div style={{ border: '1px solid #fff', padding: 10 }}>
-        <button
-          style={{ background: '#409FEE', border: 0 }}
-          onClick={this.handleClick}
-        >
-          Follow
-        </button>
+      <div>
+        <Button onClick={this.handleClick}>Follow</Button>
       </div>
     )
   }

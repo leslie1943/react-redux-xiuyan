@@ -14,26 +14,24 @@ interface Props {
 class ReduxCounter extends Component<Props, any> {
   render() {
     return (
-      <div>
-        <div style={{ margin: 100 }}>
-          <Button
-            type="primary"
-            size="large"
-            onClick={() => this.props.increment(20)}
-          >
-            +
-          </Button>
-          <span style={{ padding: '10px 10px' }}>
-            <Button> {this.props.counter}</Button>
-          </span>
-          <Button
-            type="ghost"
-            size="large"
-            onClick={() => this.props.decrement(5)}
-          >
-            -
-          </Button>
-        </div>
+      <div style={{ margin: 50 }}>
+        <Button
+          type="primary"
+          size="large"
+          onClick={() => this.props.increment(20)}
+        >
+          +
+        </Button>
+        <span style={{ padding: '10px 10px' }}>
+          <Button> {this.props.counter}</Button>
+        </span>
+        <Button
+          type="ghost"
+          size="large"
+          onClick={() => this.props.decrement(5)}
+        >
+          -
+        </Button>
       </div>
     )
   }

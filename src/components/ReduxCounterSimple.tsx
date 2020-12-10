@@ -3,6 +3,7 @@ import { incrementAction, reduceAction } from '../reducers/calculate'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { RootState } from '../reducers/index'
+import { Button } from 'antd'
 
 interface Props {
   num: number
@@ -20,14 +21,15 @@ class CounterSimple extends React.Component<Props, any> {
     }
     return (
       <div>
-        <button style={btnStyle} onClick={this.props.increment}>
+        <Button style={btnStyle} onClick={this.props.increment}>
           +
-        </button>
-        <button style={btnStyle} onClick={this.props.decrement}>
+        </Button>
+
+        <Button style={btnStyle} onClick={this.props.decrement}>
           -
-        </button>
-        <p>{this.props.num}</p>
-        <p>{this.props.color}</p>
+        </Button>
+        <h2>num is: {this.props.num}</h2>
+        <h2>color is: {this.props.color}</h2>
       </div>
     )
   }

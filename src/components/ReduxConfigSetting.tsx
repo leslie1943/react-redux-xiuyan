@@ -3,6 +3,7 @@ import { darkAction, lightAction } from '../reducers/config'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { RootState } from '../reducers/index'
+import { Button } from 'antd'
 
 interface Props {
   color: string
@@ -23,14 +24,14 @@ class CounterSimple extends React.Component<Props> {
     }
     return (
       <div style={divStyle}>
-        <button style={btnStyle} onClick={this.props.toLight}>
+        <Button style={btnStyle} onClick={this.props.toLight}>
           To Light
-        </button>
-        <button style={btnStyle} onClick={this.props.toDark}>
+        </Button>
+        <Button style={btnStyle} onClick={this.props.toDark}>
           To Dark
-        </button>
-        <p>{this.props.color}</p>
-        <p>{this.props.fontSize}</p>
+        </Button>
+        <h2 style={{ color: '#fff' }}>{this.props.color}</h2>
+        <h2 style={{ color: '#fff' }}>{this.props.fontSize}</h2>
       </div>
     )
   }

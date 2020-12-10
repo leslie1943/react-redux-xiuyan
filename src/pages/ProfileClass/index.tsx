@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'antd'
 
 import ProfilePage from '../../components/ProfilePage'
 
@@ -28,18 +29,14 @@ class Profile extends Component<any, ProfileState> {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <div
-            className="child-container"
-            style={{ border: '1px solid #409FEE', padding: 10 }}
-          >
-            <p>Welcome to {this.state.profile}'s Profile</p>
-            <ProfilePage user={this.state.profile} />
-            <button onClick={this.handleChangeProfile}>Change profile</button>
-          </div>
-          <hr />
-        </header>
+      <div style={{ margin: 50 }}>
+        <h1>Welcome to {this.state.profile}'s Profile</h1>
+        <ProfilePage user={this.state.profile} />
+        <div style={{ marginTop: 20 }}>
+          <Button type="primary" onClick={this.handleChangeProfile}>
+            Change profile
+          </Button>
+        </div>
       </div>
     )
   }

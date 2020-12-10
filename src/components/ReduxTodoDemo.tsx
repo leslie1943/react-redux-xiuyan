@@ -2,7 +2,7 @@ import React from 'react'
 import { addAction, reduceAction, ItemState, addTodo } from '../reducers/todo'
 import { connect } from 'react-redux'
 import { RootState, ReduxDispatch } from '../reducers/index'
-
+import { Button } from 'antd'
 interface Props {
   add: () => any
   reduce: () => any
@@ -19,22 +19,23 @@ class TodoDemo extends React.Component<Props> {
     return (
       <div>
         {/* 添加静态数据 */}
-        <button style={btnStyle} onClick={this.props.add}>
+        <Button type="primary" style={btnStyle} onClick={this.props.add}>
           To Add static data
-        </button>
+        </Button>
         {/* 添加动态数据 */}
-        <button
+        <Button
+          type="primary"
           style={btnStyle}
           onClick={() =>
             this.props.onPush({ name: Math.random().toString(), status: 0 })
           }
         >
           To Push dynamic data
-        </button>
+        </Button>
         {/* 删除数据 */}
-        <button style={btnStyle} onClick={this.props.reduce}>
+        <Button type="primary" style={btnStyle} onClick={this.props.reduce}>
           To Reduce data
-        </button>
+        </Button>
 
         {/* 显示数据 */}
         {this.props.todoItems &&

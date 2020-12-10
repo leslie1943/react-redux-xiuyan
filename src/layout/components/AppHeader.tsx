@@ -18,8 +18,8 @@ export default function AppHeader() {
             color: 'white',
           }}
         >
-          今 天 只 有 残 留 的 躯 壳, 迎 接 光 辉 岁 月 ,风 雨 中 抱 紧 自 由,
-          一 生 经 过 彷 徨 的 挣 扎 , 自 信 可 改 变 未 来, 问 谁 又 能 做 到.
+          人 生 路, 路 迢 迢, 谁 道 自 古 英 雄 多 寂 寥. 若 一 朝 看 透 了,一
+          生 清 风 争 多 少.
         </span>
       </div>
     </Header>

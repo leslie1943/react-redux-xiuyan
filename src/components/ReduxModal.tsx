@@ -15,7 +15,7 @@ export interface ModalProps {
 
 function Modal(props: ModalProps) {
   return (
-    <div>
+    <div style={{ margin: 50 }}>
       <Button onClick={props.show}>显示</Button>
       <Button onClick={props.hide}>隐藏</Button>
       <Button onClick={props.show_async}>显示 async</Button>
