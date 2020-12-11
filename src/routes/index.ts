@@ -16,6 +16,8 @@ import ReduxCount from '../pages/ReduxCount/index'
 import { RouteProps } from 'react-router-dom'
 import WillMatch from 'src/pages/RoutesDemo/WillMatch'
 import ReduxModal from '../components/ReduxModal'
+import HooksCustom from '../components/HooksCustomDemo'
+import HooksImplement from '../components/HooksImplement'
 
 interface RouteConfigState extends RouteProps {
   name?: string
@@ -25,6 +27,7 @@ interface RouteConfigState extends RouteProps {
   isExact?: boolean
 }
 
+// 存储所有的路由规则
 const routes: Array<RouteConfigState> = [
   {
     path: '/',
@@ -38,6 +41,20 @@ const routes: Array<RouteConfigState> = [
     path: '/hooks',
     component: Hooks,
     name: 'Hooks demo',
+    hide: false,
+    isExact: true,
+  },
+  {
+    path: '/hooks-custom',
+    component: HooksCustom,
+    name: 'Hooks custom',
+    hide: false,
+    isExact: true,
+  },
+  {
+    path: '/react-hooks-implement',
+    component: HooksImplement,
+    name: 'react hooks implement',
     hide: false,
     isExact: true,
   },

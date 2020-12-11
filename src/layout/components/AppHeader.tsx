@@ -16,10 +16,11 @@ export default function AppHeader() {
         <span
           style={{
             color: 'white',
+            fontSize: 16,
+            fontWeight: 'bold',
           }}
         >
-          人 生 路, 路 迢 迢, 谁 道 自 古 英 雄 多 寂 寥. 若 一 朝 看 透 了,一
-          生 清 风 争 多 少.
+          乘风破浪会有时, 直挂云帆济沧海.
         </span>
       </div>
     </Header>

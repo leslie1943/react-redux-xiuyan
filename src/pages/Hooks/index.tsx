@@ -13,6 +13,8 @@ import HooksUseMemo from '../../components/HooksUseMemo'
 import HooksMemo from '../../components/HooksMemo'
 import HooksUseCallback from '../../components/HooksUseCallback'
 import HooksUseRef from '../../components/HooksUseRef'
+import HooksUseRefDemo from '../../components/HooksUseRefDemo'
+import HooksFromRuter from '../../components/HooksFromRuter'
 
 const { Panel } = Collapse
 
@@ -55,6 +57,12 @@ class HooksDemo extends Component {
         </Panel>
         <Panel header="12:useRef" key="12">
           <HooksUseRef />
+        </Panel>
+        <Panel header="13:useRef demo" key="13">
+          <HooksUseRefDemo />
+        </Panel>
+        <Panel header="14:router hooks" key="14">
+          <HooksFromRuter />
         </Panel>
       </Collapse>
     )

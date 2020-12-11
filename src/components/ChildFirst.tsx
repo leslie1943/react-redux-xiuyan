@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Button } from 'antd'
-
 interface FirstChildProps {
   title: string
   emitChangeTitle: Function
