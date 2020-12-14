@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Spin, Divider } from 'antd'
+import { Button, Spin, Divider, Input } from 'antd'
 import { useLoadPost } from '../hooks/post'
 import { useUpdateInput } from '../hooks/input'
 
@@ -24,9 +24,11 @@ export default function HooksCustomDemo(props: any) {
       <Divider />
       <div>
         <form>
-          <input type="text" name="uername" {...usernameInput} />
-          <input type="password" name="password" {...passworInput} />
-          <Button onClick={submitForm}>提交</Button>
+          <Input type="text" name="uername" {...usernameInput} />
+          <Input type="password" name="password" {...passworInput} />
+          <Button type="primary" onClick={submitForm}>
+            提交
+          </Button>
         </form>
       </div>
     </div>

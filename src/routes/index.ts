@@ -18,6 +18,9 @@ import WillMatch from 'src/pages/RoutesDemo/WillMatch'
 import ReduxModal from '../components/ReduxModal'
 import HooksCustom from '../components/HooksCustomDemo'
 import HooksImplement from '../components/HooksImplement'
+import FormikBasic from '../components/FormikBasic'
+import FormikYup from '../components/FormikYup'
+import FormikForm from 'src/components/FormikForm'
 
 interface RouteConfigState extends RouteProps {
   name?: string
@@ -54,7 +57,7 @@ const routes: Array<RouteConfigState> = [
   {
     path: '/react-hooks-implement',
     component: HooksImplement,
-    name: 'react hooks implement',
+    name: 'Hooks imp.',
     hide: false,
     isExact: true,
   },
@@ -119,6 +122,35 @@ const routes: Array<RouteConfigState> = [
         name: 'Redux modal',
         hide: false,
         isExact: true,
+      },
+    ],
+  },
+  {
+    path: '/formik',
+    name: 'Formik',
+    isExact: true,
+    hide: false,
+    children: [
+      {
+        path: '/formik-basic',
+        name: 'Formik basic',
+        isExact: true,
+        hide: false,
+        component: FormikBasic,
+      },
+      {
+        path: '/formik-yup',
+        name: 'Formik yup',
+        isExact: true,
+        hide: false,
+        component: FormikYup,
+      },
+      {
+        path: '/formik-form',
+        name: 'Formik form',
+        isExact: true,
+        hide: false,
+        component: FormikForm,
       },
     ],
   },

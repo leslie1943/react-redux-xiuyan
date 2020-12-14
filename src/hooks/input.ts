@@ -1,6 +1,11 @@
 import { useState } from 'react'
 
-export function useUpdateInput(initialValue: string | number | undefined) {
+// type Key = string | number
+export function useUpdateInput(initialValue: React.Key | undefined) {
   const [value, setValue] = useState(initialValue)
-  return { value, onChange: (event: any) => setValue(event.target.value) }
+  return {
+    value,
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) =>
+      setValue(event.target.value),
+  }
 }
